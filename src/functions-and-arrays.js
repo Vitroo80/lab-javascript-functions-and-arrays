@@ -51,23 +51,34 @@ function sum() {}
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(array) {
-  
-    let result = 0
-    for(let i=0; i< array.length; i++){
+  let result = 0
+  for(let i=0; i< array.length; i++){
       result += array[i]
-    }
-    if(!array.length){
-      return null
-    }
-    return result / array.length
+      }
+      if(!array.length){
+        return null
+      }
+      return result / array.length
 }
-
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(barray) {
+  let total = 0
+  
+  if(!barray.length) {
+    return null
+  }
+
+  for (let i=0; i< barray.length; i++){
+    total += barray[i].length
+  }
+  
+return total / barray.length
+
+ }
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -87,14 +98,45 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  let newArray= []
+  if (array.length === 0){
+    return null
+  }
+
+  for (let i=0; i < array.length; i++){
+    if (!newArray.includes(array[i])) {
+      newArray.push(array[i])
+    }
+    
+  }
+  return newArray
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array, word) {
+  if (array.length === 0){
+    return null
+  }
+
+  if (array.length === 1 && array[0] === word){
+    return true
+  }
+
+  for (let i=0; i<array.length; i++){
+    if (array[i] === word){
+      return true
+    }
+  }
+
+  if (!word.includes(array)){
+    return false
+  }
+}
 
 
 
@@ -113,7 +155,19 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+let count = 0
+if (array.length ===0){
+  return 0
+}
+
+for (let i=0; i<array.length; i++){
+  if(array[i]=== word){
+    count+=1
+  }
+}
+return count
+}
 
 
 
